@@ -19,7 +19,7 @@ export default async function createProduct(_, { input }, context) {
     clientMutationId = null,
     product: productInput,
     shopId,
-    shouldCreateFirstVariant
+    shouldCreateFirstVariant,
   } = input;
 
   if (productInput && Array.isArray(productInput.tagIds)) {
@@ -30,11 +30,11 @@ export default async function createProduct(_, { input }, context) {
   const product = await context.mutations.createProduct(context, {
     product: productInput,
     shopId: decodeShopOpaqueId(shopId),
-    shouldCreateFirstVariant
+    shouldCreateFirstVariant,
   });
 
   return {
     clientMutationId,
-    product
+    product,
   };
 }
