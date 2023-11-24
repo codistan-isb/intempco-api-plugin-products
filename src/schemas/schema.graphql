@@ -1,10 +1,10 @@
 "Product configuration data"
 type ProductConfiguration {
   "The Product ID"
-  productId: ID!
+  productId: ID
 
   "The ProductVariant ID"
-  productVariantId: ID!
+  productVariantId: ID
 }
 
 "A bulk write error type"
@@ -32,7 +32,7 @@ input ProductTagsOperationInput {
 }
 
 "Response payload managing tags on products"
-type ProductTagsOperationPayload  {
+type ProductTagsOperationPayload {
   "The same string you sent with the mutation params, for matching mutation calls with their responses"
   clientMutationId: String
 

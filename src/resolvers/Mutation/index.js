@@ -21,5 +21,5 @@ export default {
   removeTagsFromProducts,
   updateProduct,
   updateProductVariant,
-  updateProductsVisibility
+  updateProductsVisibility,
 };

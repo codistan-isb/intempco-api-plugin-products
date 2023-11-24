@@ -97,7 +97,7 @@ const filters = new SimpleSchema({
  * @param {Object} productFilters - See filters schema above
  * @returns {Object} Selector
  */
-export default function applyProductFilters(context, productFilters) {
+export default function applyProductVariantFilters(context, productFilters) {
   // if there are filter/params that don't match the schema
   filters.validate(productFilters);
 
@@ -184,7 +184,7 @@ export default function applyProductFilters(context, productFilters) {
     if (productFilters.productIds) {
       selector = {
         ...selector,
-        _id: {
+        ancestors: {
           $in: productFilters.productIds,
         },
       };
