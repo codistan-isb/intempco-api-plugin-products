@@ -593,6 +593,10 @@ input ProductDateOperators {
   between: ProductDateRange
 }
 
+type ProductVariantPayload {
+  totalCount: Int
+  varinatData: ProductVariant
+}
 extend type Mutation {
   "Archive products"
   archiveProducts(
@@ -782,4 +786,12 @@ extend type Query {
     "By default, products are sorted by createdAt. Set this to sort by one of the other allowed fields"
     sortBy: ProductSortByField = createdAt
   ): ProductVariantConnection
+
+  productVariant(
+    "Product variant ID"
+    variantId: ID!
+
+    "Shop ID"
+    shopId: ID!
+  ): ProductVariantPayload
 }
