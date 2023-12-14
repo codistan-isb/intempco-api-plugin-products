@@ -14,6 +14,6 @@ export default async function productVariant(_, args, context, info) {
         variantId,
         shopId,
     });
-    console.log("query ", query);
+    // console.log("query ", query);
     return query;
 }
