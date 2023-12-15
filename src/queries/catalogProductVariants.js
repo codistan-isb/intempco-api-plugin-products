@@ -19,7 +19,7 @@ import applyProductVariantFilters from "../utils/applyProductVariantFilters.js";
  * @param {String[]} [tagIds] - List of tag ids to filter by
  * @returns {Promise<Object>} Products object Promise
  */
-export default async function productVariants(context, input) {
+export default async function catalogProductVariants(context, input) {
   const { collections } = context;
   const { Products } = collections;
   const productFilters = input;

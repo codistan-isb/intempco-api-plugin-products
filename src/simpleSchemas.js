@@ -190,6 +190,10 @@ export const ProductVariant = new SimpleSchema({
   isDeleted: {
     type: Boolean,
   },
+  inStock: {
+    type: Boolean,
+    optional: true,
+  },
   isVisible: {
     type: Boolean,
   },

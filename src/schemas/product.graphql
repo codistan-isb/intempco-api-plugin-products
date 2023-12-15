@@ -149,6 +149,9 @@ type ProductVariant {
 
   "A short title to use for product detail select lists"
   optionTitle: String
+  
+  "in stock flag for custom and non-custome item"
+  inStock: Boolean
 
   "Child variants, if any"
   options(
@@ -540,6 +543,9 @@ input ProductVariantInput {
 
   "The width of the product, if it has physical dimensions"
   width: Float
+   
+  "in stock flag for custom and non-custome item"
+  inStock: Boolean
 }
 
 "Input for the `updateProductVariantField` mutation"
@@ -726,7 +732,7 @@ extend type Query {
     sortBy: ProductSortByField = createdAt
   ): ProductConnection
 
-  productVariants(
+  catalogProductVariants(
     createdAt: ProductDateOperators
 
     "Filter by updated at timestamp"
@@ -787,7 +793,7 @@ extend type Query {
     sortBy: ProductSortByField = createdAt
   ): ProductVariantConnection
 
-  productVariant(
+  catalogProductVariant(
     "Product variant ID"
     variantId: ID!
 

@@ -317,8 +317,8 @@ export default function applyProductFilters(context, productFilters) {
     }
   } // end if productFilters
 
-  console.log("asdasd ", productFilters);
-  console.log("Selector is ", selector);
+  // console.log("asdasd ", productFilters);
+  // console.log("Selector is ", selector);
 
   return selector;
 }

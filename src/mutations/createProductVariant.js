@@ -14,6 +14,7 @@ const inputSchema = new SimpleSchema({
     blackbox: true,
     optional: true
   }
+  
 });
 
 /**

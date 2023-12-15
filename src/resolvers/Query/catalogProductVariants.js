@@ -19,7 +19,7 @@ import ReactionError from "@reactioncommerce/reaction-error";
  * @param {Object} info Info about the GraphQL request
  * @returns {Promise<Object>} Products
  */
-export default async function productVariants(_, args, context, info) {
+export default async function catalogProductVariants(_, args, context, info) {
   const {
     createdAt,
     updatedAt,
@@ -49,7 +49,7 @@ export default async function productVariants(_, args, context, info) {
     );
   }
 
-  const query = await context.queries.productVariants(context, {
+  const query = await context.queries.catalogProductVariants(context, {
     createdAt,
     updatedAt,
     productIds,

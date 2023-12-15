@@ -2,7 +2,7 @@ import {
     decodeProductOpaqueId,
     decodeShopOpaqueId,
 } from "../xforms/id.js";
-export default async function productVariant(context, input) {
+export default async function catalogProductVariant(context, input) {
     const { collections } = context;
     const { Products } = collections;
     let {
