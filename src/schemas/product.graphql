@@ -187,8 +187,24 @@ type ProductVariant {
 
   "The width of the product, if it has physical dimensions"
   width: Float
-}
+  
+  "in stock flag for custom and non-custome item"
+  inStock: Boolean
 
+  Features: String
+  
+  Applications: String
+  " Docs pdf "
+  Docs: [DocInfoPayload]
+
+  " partNumber "
+  partNumber: String
+}
+type DocInfoPayload {
+  URL: String
+  productId: ID
+  variantId: ID
+}
 "Response payload of `archiveProducts` mutation"
 type ArchiveProductsPayload {
   "The same string you sent with the mutation params, for matching mutation calls with their responses"
