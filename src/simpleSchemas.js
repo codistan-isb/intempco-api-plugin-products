@@ -92,7 +92,23 @@ const Workflow = new SimpleSchema({
   },
   "workflow.$": String,
 });
-
+export const DocInfo = new SimpleSchema({
+  productId: {
+    type: String,
+    label: "Product Id",
+    optional: true,
+  },
+  variantId: {
+    type: String,
+    label: "Variant Id",
+    optional: true,
+  },
+  URL: {
+    type: String,
+    label: "URL",
+    optional: true,
+  },
+});
 /**
  * @name VariantMedia
  * @memberof Schemas
@@ -190,9 +206,28 @@ export const ProductVariant = new SimpleSchema({
   isDeleted: {
     type: Boolean,
   },
-  inStock: {
-    type: Boolean,
+  Features: {
+    type: String,
+    label: "Features",
     optional: true,
+  },
+  Applications: {
+    type: String,
+    label: "Applications",
+    optional: true,
+  },
+  Docs: {
+    type: Array,
+    label: "Docs",
+    optional: true,
+  },
+  "Docs.$": {
+    type: DocInfo,
+  },
+  inStock: {
+      type: Boolean,
+      label: "In Stock",
+      optional: true,
   },
   isVisible: {
     type: Boolean,
