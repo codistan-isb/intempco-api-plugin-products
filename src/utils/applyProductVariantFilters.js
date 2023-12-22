@@ -87,6 +87,10 @@ const filters = new SimpleSchema({
     optional: true,
     defaultValue: false,
   },
+  inStock: {
+    type: Boolean,
+    optional: true,
+  },
 });
 
 /**
@@ -100,7 +104,7 @@ const filters = new SimpleSchema({
 export default function applyProductVariantFilters(context, productFilters) {
   // if there are filter/params that don't match the schema
   filters.validate(productFilters);
-
+  console.log("productFilters:- ", productFilters);
   // Init default selector - Everyone can see products that fit this selector
   let selector = {
     ancestors: [], // Lookup top-level products
@@ -315,10 +319,17 @@ export default function applyProductVariantFilters(context, productFilters) {
         },
       };
     }
-  } // end if productFilters
+  }
+  if (productFilters.inStock || productFilters.inStock !== undefined) {
+    selector = {
+      ...selector,
+      inStock: productFilters.inStock,
+    };
+  }
+  // end if productFilters
 
-  // console.log("asdasd ", productFilters);
-  // console.log("Selector is ", selector);
+  console.log("asdasd ", productFilters);
+  console.log("Selector is ", selector);
 
   return selector;
 }

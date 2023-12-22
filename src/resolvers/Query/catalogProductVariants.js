@@ -34,6 +34,7 @@ export default async function catalogProductVariants(_, args, context, info) {
     metafieldValue,
     priceMin,
     priceMax,
+    inStock,
     ...connectionArgs
   } = args;
   const shopIds = opaqueShopIds.map(decodeShopOpaqueId);
@@ -63,6 +64,7 @@ export default async function catalogProductVariants(_, args, context, info) {
     metafieldValue,
     priceMin,
     priceMax,
+    inStock,
   });
 
   return getPaginatedResponse(query, connectionArgs, {

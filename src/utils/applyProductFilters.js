@@ -66,6 +66,10 @@ const filters = new SimpleSchema({
     type: Boolean,
     optional: true,
   },
+  inStock: {
+    type: Boolean,
+    optional: true,
+  },
   metafieldKey: {
     type: String,
     optional: true,
@@ -315,7 +319,19 @@ export default function applyProductFilters(context, productFilters) {
         },
       };
     }
-  } // end if productFilters
+
+    if (productFilters.inStock !== undefined) {
+      selector = {
+        ...selector,
+        inStock: productFilters.inStock,
+      };
+    }
+  } 
+  
+  
+  
+  
+  // end if productFilters
 
   // console.log("asdasd ", productFilters);
   // console.log("Selector is ", selector);
