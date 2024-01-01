@@ -41,7 +41,7 @@ export default async function catalogProductVariants(_, args, context, info) {
   const productIds =
     opaqueProductIds && opaqueProductIds.map(decodeProductOpaqueId);
   const tagIds = opaqueTagIds && opaqueTagIds.map(decodeTagOpaqueId);
-  console.log("Product Variant Query ", productIds);
+  // console.log("Product Variant Query ", productIds);
 
   if (productIds.length !== 1 || shopIds.length !== 1) {
     throw new ReactionError(

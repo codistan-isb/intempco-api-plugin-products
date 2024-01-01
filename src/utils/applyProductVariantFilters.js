@@ -328,8 +328,8 @@ export default function applyProductVariantFilters(context, productFilters) {
   }
   // end if productFilters
 
-  console.log("asdasd ", productFilters);
-  console.log("Selector is ", selector);
+  // console.log("asdasd ", productFilters);
+  // console.log("Selector is ", selector);
 
   return selector;
 }

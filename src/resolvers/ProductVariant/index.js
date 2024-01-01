@@ -8,5 +8,10 @@ export default {
   media: (node, args, context) => getVariantMedia(node, context),
   metafields: (node) => node.metafields || [],
   options: (node, args, context) => getVariants(context, node._id, undefined, args),
-  shop: resolveShopFromShopId
+  shop: resolveShopFromShopId,
+  variantId:(node) => {
+    // console.log("node ",node._id);
+    // console.log("args ",args);
+    return encodeProductOpaqueId(node._id);
+  },
 };

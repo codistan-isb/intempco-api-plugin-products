@@ -23,7 +23,7 @@ export default async function catalogProductVariants(context, input) {
   const { collections } = context;
   const { Products } = collections;
   const productFilters = input;
-  console.log("input for filters",productFilters);
+  // console.log("input for filters",productFilters);
   // Check the permissions for all shops requested
   // await Promise.all(
   //   productFilters.shopIds.map(async (shopId) => {
@@ -35,7 +35,7 @@ export default async function catalogProductVariants(context, input) {
 
   // Create the mongo selector from the filters
   const selector = applyProductVariantFilters(context, productFilters);
-console.log("selector for query send ",selector);
+  // console.log("selector for query send ",selector);
   // Get the first N (limit) top-level products that match the query
   return Products.find(selector);
 }
