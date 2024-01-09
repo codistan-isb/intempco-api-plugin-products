@@ -197,6 +197,10 @@ type ProductVariant {
 
   variantId:ID
 
+  productId:ID
+
+  tagId:ID
+
 "description field for varinat"
   description: String
 

@@ -16,7 +16,7 @@ export default async function catalogProductVariant(context, input) {
     // Get the first N (limit) top-level products that match the query
     let countTotal = await Products.countDocuments(selector);
     let productFound = await Products.find(selector).toArray();
-    console.log("productFound",productFound);
+    // console.log("productFound",productFound);
     return {
         totalCount: countTotal,
         varinatData: productFound[0]

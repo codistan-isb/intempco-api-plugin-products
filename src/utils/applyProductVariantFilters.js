@@ -104,7 +104,7 @@ const filters = new SimpleSchema({
 export default function applyProductVariantFilters(context, productFilters) {
   // if there are filter/params that don't match the schema
   filters.validate(productFilters);
-  console.log("productFilters:- ", productFilters);
+  // console.log("productFilters:- ", productFilters);
   // Init default selector - Everyone can see products that fit this selector
   let selector = {
     ancestors: [], // Lookup top-level products
