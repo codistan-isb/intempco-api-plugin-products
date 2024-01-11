@@ -1,0 +1,42 @@
+type savedProduct {
+  _id: ID
+  title: String
+  price: Float
+  description: String
+  userId: ID
+  category: String
+  variantId: ID
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type savedProductResponse {
+  status: Boolean
+  message: String
+  savedProduct: savedProduct
+}
+type deleteSavedProductResponse {
+  status: Boolean
+  message: String
+}
+input savedProductInput {
+  title: String
+  price: Float
+  description: String
+  userId: String
+  category: String
+  variantId: ID
+}
+type savedProductbyUserId {
+  totalCount: Int
+  savedProduct: [savedProduct]
+}
+type Mutation {
+  addSavedProduct(input: savedProductInput): savedProductResponse
+  deleteSavedProduct(userId: ID, variantId: ID): deleteSavedProductResponse
+}
+
+type Query {
+  getAllSavedProducts: [savedProduct]
+  getSaveProductByUserId(userId: ID): savedProductbyUserId
+}

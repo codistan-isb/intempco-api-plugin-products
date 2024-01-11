@@ -4,7 +4,12 @@ import queries from "./queries/index.js";
 import policies from "./policies.json";
 import resolvers from "./resolvers/index.js";
 import schemas from "./schemas/index.js";
-import { Product, ProductVariant, ProductVariantInputSchema, VariantMedia } from "./simpleSchemas.js";
+import {
+  Product,
+  ProductVariant,
+  ProductVariantInputSchema,
+  VariantMedia,
+} from "./simpleSchemas.js";
 
 /**
  * @summary Import and call this function to add this plugin to your API.
@@ -34,6 +39,9 @@ export default async function register(app) {
           // Use _id as second sort to force full stability
           [{ updatedAt: 1, _id: 1 }],
         ],
+      },
+      SavedProduct: {
+        name: "SavedProduct",
       },
     },
     graphQL: {
