@@ -149,7 +149,7 @@ type ProductVariant {
 
   "A short title to use for product detail select lists"
   optionTitle: String
-  
+
   "in stock flag for custom and non-custome item"
   inStock: Boolean
 
@@ -187,21 +187,21 @@ type ProductVariant {
 
   "The width of the product, if it has physical dimensions"
   width: Float
-  
+
   "in stock flag for custom and non-custome item"
   inStock: Boolean
 
   Features: String
-  
+
   Applications: String
 
-  variantId:ID
+  variantId: ID
 
-  productId:ID
+  productId: ID
 
-  tagId:ID
+  tagId: ID
 
-"description field for varinat"
+  "description field for varinat"
   description: String
 
   "short description field for varinat"
@@ -215,6 +215,7 @@ type ProductVariant {
 }
 type DocInfoPayload {
   URL: String
+  title: String
   productId: ID
   variantId: ID
 }
@@ -572,10 +573,10 @@ input ProductVariantInput {
 
   "The width of the product, if it has physical dimensions"
   width: Float
-   
+
   "in stock flag for custom and non-custome item"
   inStock: Boolean
-  
+
   "description field for varinat"
   description: String
 
@@ -828,8 +829,7 @@ extend type Query {
     sortBy: ProductSortByField = createdAt
 
     "in stock filter"
-    inStock:Boolean
-    
+    inStock: Boolean
   ): ProductVariantConnection
 
   catalogProductVariant(
