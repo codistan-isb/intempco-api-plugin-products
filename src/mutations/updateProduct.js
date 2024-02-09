@@ -58,7 +58,7 @@ export default async function updateProduct(context, input) {
 
   Product.validate(modifier, { modifier: true });
 
-  const { value: updatedProduct } = await Products.findOneAndUpdate(
+  const { value: updatedProduct } = await Products.productId(
     {
       _id: productId,
       shopId
