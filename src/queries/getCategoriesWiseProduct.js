@@ -26,7 +26,7 @@ export default async function getCategoriesWiseProduct(context) {
             as: "product",
             in: {
               _id: "$$product._id",
-              slug: "$$product.slug",
+              slug: "$$product.handle",
               sku: "$$product.sku",
               title: "$$product.title",
             },

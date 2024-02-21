@@ -649,6 +649,7 @@ type ProductData {
   _id: String
   title: String
   sku: String
+  slug: String
 }
 extend type Mutation {
   "Archive products"
