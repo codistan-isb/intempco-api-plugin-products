@@ -634,10 +634,21 @@ input ProductDateOperators {
   "The value must be between the given values"
   between: ProductDateRange
 }
+scalar JSON
 
 type ProductVariantPayload {
   totalCount: Int
   varinatData: ProductVariant
+}
+type CategoriesWiseProduct {
+  _id: String
+  tagName: String
+  products: [ProductData]
+}
+type ProductData {
+  _id: String
+  title: String
+  sku: String
 }
 extend type Mutation {
   "Archive products"
@@ -839,4 +850,6 @@ extend type Query {
     "Shop ID"
     shopId: ID!
   ): ProductVariantPayload
+
+  getCategoriesWiseProduct: [CategoriesWiseProduct]
 }

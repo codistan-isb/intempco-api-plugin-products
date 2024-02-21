@@ -39,7 +39,7 @@ export default async function updateProduct(context, input) {
   );
 
   const currentProduct = await Products.findOne({ _id: productId, shopId });
-  if (!currentProduct) throw new ReactionError("not-found", "Product not found");
+  if (!currentProduct) throw new ReactionError("not-found", "Product not found ");
 
   const updateDocument = await cleanProductInput(context, {
     currentProductHandle: currentProduct.handle,

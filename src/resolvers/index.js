@@ -5,7 +5,8 @@ import Query from "./Query/index.js";
 import Product from "./Product/index.js";
 import ProductVariant from "./ProductVariant/index.js";
 import savedProduct from "./savedProduct/index.js";
-
+import ProductData from "./ProductData/index.js";
+import CategoriesWiseProduct from "./CategoriesWiseProduct/index.js";
 export default {
   ProductConfiguration,
   Mutation,
@@ -13,5 +14,7 @@ export default {
   Product,
   ProductVariant,
   ...getConnectionTypeResolvers("Product"),
-  savedProduct
+  savedProduct,
+  ProductData,
+  CategoriesWiseProduct
 };
