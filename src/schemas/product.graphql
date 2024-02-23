@@ -853,4 +853,6 @@ extend type Query {
   ): ProductVariantPayload
 
   getCategoriesWiseProduct: [CategoriesWiseProduct]
+
+  getAccessoriesAndRelatedProducts: [ProductVariant]
 }
