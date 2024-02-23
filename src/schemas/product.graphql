@@ -212,6 +212,9 @@ type ProductVariant {
 
   " partNumber "
   partNumber: String
+
+  # weightage field for varinat"
+  weightage: Int
 }
 type DocInfoPayload {
   URL: String
@@ -582,6 +585,12 @@ input ProductVariantInput {
 
   "short description field for varinat"
   shortDescription: String
+
+  " partNumber "
+  partNumber: String
+
+  # weightage field for varinat"
+  weightage: Int
 }
 
 "Input for the `updateProductVariantField` mutation"

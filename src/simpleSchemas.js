@@ -289,6 +289,16 @@ export const ProductVariant = new SimpleSchema({
     type: Workflow,
     optional: true,
   },
+  partNumber: {
+    type: String,
+    label: "Part Number",
+    optional: true,
+  },
+  weightage: {
+    type: Number,
+    label: "weightage",
+    optional: true,
+  },
 });
 
 /**

@@ -70,6 +70,14 @@ const filters = new SimpleSchema({
     type: Boolean,
     optional: true,
   },
+  partNumber: {
+    type: String,
+    optional: true,
+  },
+  weightage: {
+    type: Number,
+    optional: true,
+  },
   metafieldKey: {
     type: String,
     optional: true,
@@ -324,6 +332,18 @@ export default function applyProductFilters(context, productFilters) {
       selector = {
         ...selector,
         inStock: productFilters.inStock,
+      };
+    }
+    if (productFilters.partNumber !== undefined) {
+      selector = {
+        ...selector,
+        partNumber: productFilters.partNumber,
+      };
+    }
+    if (productFilters.weightage !== undefined) {
+      selector = {
+        ...selector,
+        weightage: productFilters.weightage,
       };
     }
   } 

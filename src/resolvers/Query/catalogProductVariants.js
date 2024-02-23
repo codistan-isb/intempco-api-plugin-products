@@ -35,6 +35,8 @@ export default async function catalogProductVariants(_, args, context, info) {
     priceMin,
     priceMax,
     inStock,
+    partNumber,
+    weightage,
     ...connectionArgs
   } = args;
   const shopIds = opaqueShopIds.map(decodeShopOpaqueId);
@@ -65,6 +67,8 @@ export default async function catalogProductVariants(_, args, context, info) {
     priceMin,
     priceMax,
     inStock,
+    partNumber,
+    weightage,
   });
 
   return getPaginatedResponse(query, connectionArgs, {
