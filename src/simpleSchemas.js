@@ -38,6 +38,7 @@ const Metafield = new SimpleSchema({
     type: String,
     optional: true,
   },
+  
 });
 
 /**
@@ -359,6 +360,10 @@ export const Product = new SimpleSchema({
     type: String,
     optional: true,
   },
+  shortDescription: {
+    type: String,
+    optional: true,
+  },
   facebookMsg: {
     type: String,
     optional: true,
@@ -388,6 +393,29 @@ export const Product = new SimpleSchema({
   metaDescription: {
     type: String,
     optional: true,
+  },
+  Features: {
+    type: String,
+    label: "Features",
+    optional: true,
+  },
+  Applications: {
+    type: String,
+    label: "Applications",
+    optional: true,
+  },
+  Docs: {
+    type: Array,
+    label: "Docs",
+    optional: true,
+  },
+  "Docs.$": {
+    type: DocInfo,
+  },
+  inStock: {
+      type: Boolean,
+      label: "In Stock",
+      optional: true,
   },
   metafields: {
     type: Array,
@@ -461,6 +489,11 @@ export const Product = new SimpleSchema({
   },
   workflow: {
     type: Workflow,
+    optional: true,
+  },
+  partNumber: {
+    type: String,
+    label: "Part Number",
     optional: true,
   },
 });

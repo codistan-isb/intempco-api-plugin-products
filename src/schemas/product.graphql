@@ -104,6 +104,17 @@ type Product {
 
   "The product vendor or manufacturer, for display"
   vendor: String
+
+  inStock: Boolean
+
+  Features: String
+
+  Applications: String
+
+  " partNumber "
+  partNumber: String
+
+  Docs: [DocInfoPayload]
 }
 
 "A Reaction product variant or option"
