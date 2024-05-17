@@ -35,6 +35,7 @@ export default async function catalogProductVariants(context, input) {
 
   // Create the mongo selector from the filters
   const selector = applyProductVariantFilters(context, productFilters);
+  console.log("selectors for variants", selector)
   // console.log("selector for query send ",selector);
   // Get the first N (limit) top-level products that match the query
   return Products.find(selector);

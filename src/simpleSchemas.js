@@ -300,6 +300,10 @@ export const ProductVariant = new SimpleSchema({
     label: "weightage",
     optional: true,
   },
+  stock: {
+    type: Number,
+    optional: true,
+  }
 });
 
 /**
@@ -496,6 +500,10 @@ export const Product = new SimpleSchema({
     label: "Part Number",
     optional: true,
   },
+  sku: {
+    type: String,
+    optional: true
+  }
 });
 
 // Deprecated. This schema is no longer used but because it's registered
