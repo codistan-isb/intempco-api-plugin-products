@@ -5,9 +5,10 @@ type savedProduct {
   description: String
   userId: ID
   category: String
-  variantId: ID
+  productId: ID
   createdAt: DateTime
   updatedAt: DateTime
+  productData: JSON
 }
 
 type savedProductResponse {
@@ -25,7 +26,8 @@ input savedProductInput {
   description: String
   userId: String
   category: String
-  variantId: ID
+  productId: ID
+  productData: JSON
 }
 type savedProductbyUserId {
   totalCount: Int
@@ -33,7 +35,7 @@ type savedProductbyUserId {
 }
 type Mutation {
   addSavedProduct(input: savedProductInput): savedProductResponse
-  deleteSavedProduct(userId: ID, variantId: ID): deleteSavedProductResponse
+  deleteSavedProduct(userId: ID, productId: ID): deleteSavedProductResponse
 }
 
 type Query {

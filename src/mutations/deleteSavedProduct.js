@@ -1,13 +1,13 @@
 import { decodeProductOpaqueId } from "../xforms/id.js";
 
 export default async function deleteSavedProduct(args, context) {
-  let { userId, variantId } = args;
+  let { userId, productId } = args;
   let { collections } = context;
   let { SavedProduct } = collections;
-  console.log("decodeProductOpaqueId", decodeProductOpaqueId(variantId));
+  console.log("decodeProductOpaqueId", decodeProductOpaqueId(productId));
   let deleteProduct = await SavedProduct.deleteOne({
     userId,
-    variantId: decodeProductOpaqueId(variantId),
+    productId: decodeProductOpaqueId(productId),
   });
     console.log("deleProduct", deleteProduct.deletedCount);
   //   console.log("deleteProduct");

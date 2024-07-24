@@ -2,15 +2,15 @@ import Random from "@reactioncommerce/random";
 import ReactionError from "@reactioncommerce/reaction-error";
 import { decodeProductOpaqueId, decodeShopOpaqueId } from "../xforms/id.js";
 export default async function addSavedProduct(context, input) {
-  let { title, price, description, category, variantId } = input;
-  let { collections, userId } = context;
+  let { title, price, description, category, productId, userId: userID, productData } = input;
+  let { collections, userId = userID } = context;
   let { SavedProduct } = collections;
   const createdAt = new Date();
   // console.log("userId",userId);
   if (!userId) {
     throw new ReactionError("access-denied", "Please Login First");
   }
-  console.log("decodeProductOpaqueId", decodeProductOpaqueId(variantId));
+  console.log("decodeProductOpaqueId", decodeProductOpaqueId(productId));
   const newSavedProduct = {
     _id: Random.id(),
     createdAt,
@@ -20,7 +20,8 @@ export default async function addSavedProduct(context, input) {
     updatedAt: createdAt,
     description,
     category,
-    variantId: decodeProductOpaqueId(variantId),
+    productId: decodeProductOpaqueId(productId),
+    productData
   };
   let addProduct = await SavedProduct.insertOne(newSavedProduct);
   // console.log("addProduct",addProduct?.ops[0]);
